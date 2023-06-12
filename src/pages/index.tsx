@@ -29,7 +29,13 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-        <div>Hey! solomon...</div>
+        <div className="px-4">Hey! welcome...</div>
+        <div className="px-4 my-2">lets count:</div>
+        {Array(100)
+          .fill(null)
+          .map((_, index) => (
+            <div className="px-4" key={index}>no: {index}</div>
+          ))}
       </Layout>
     </>
   );

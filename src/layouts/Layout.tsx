@@ -36,9 +36,9 @@ function Layout({ children }: { children: React.ReactNode }) {
         </button>
         <Link
           className="w-full py-2 text-center hover:bg-gray-200 lg:w-auto lg:px-5"
-          href="/cv"
+          href="/docs/api"
         >
-          CV
+          Api
         </Link>
       </div>
       {children}

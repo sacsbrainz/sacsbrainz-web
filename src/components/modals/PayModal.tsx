@@ -3,7 +3,6 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { payModalState } from "@/recoil/atom";
 import { useRecoilState } from "recoil";
 import Image from "next/image";
-
 import StripeLogo from "@/images/stripe.png";
 import PaystackLogo from "@/images/paystack.png";
 import PaypalLogo from "@/images/paypal.png";

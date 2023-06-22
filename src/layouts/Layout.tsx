@@ -17,7 +17,7 @@ function Layout({ children }: { children: React.ReactNode }) {
       )}
     >
       <PayModal />
-      <div className="sticky top-0 flex w-full divide-x border-b bg-white/25 backdrop-blur-[3px] lg:justify-center">
+      <div className="sticky top-0 z-50 flex w-full divide-x border-b bg-white/25 backdrop-blur-[3px] lg:justify-center">
         <Link
           className="w-full py-4 text-center hover:bg-gray-200 dark:hover:bg-black lg:w-auto lg:px-5"
           href="/"

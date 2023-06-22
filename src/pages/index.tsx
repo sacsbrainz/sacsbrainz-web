@@ -5,36 +5,16 @@ import Head from "next/head";
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Sacsbrainz</title>
-        <meta name="description" content="Life isn't hard" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      
       <Layout>
         <div className="px-4">Hey! welcome...</div>
-        <div className="px-4 my-2">lets count:</div>
+        <div className="my-2 px-4">lets count:</div>
         {Array(100)
           .fill(null)
           .map((_, index) => (
-            <div className="px-4" key={index}>no: {index}</div>
+            <div className="px-4" key={index}>
+              no: {index}
+            </div>
           ))}
       </Layout>
     </>

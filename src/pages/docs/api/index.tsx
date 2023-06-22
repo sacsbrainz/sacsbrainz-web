@@ -1,12 +1,13 @@
+import DocsLayout from "@/layouts/DocsLayout";
 import Layout from "@/layouts/Layout";
 import React from "react";
 
 function Index() {
   return (
     <Layout>
-      <div>
+      <DocsLayout defaultCode={""}>
         <p>Api</p>
-      </div>
+      </DocsLayout>
     </Layout>
   );
 }

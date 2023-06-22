@@ -23,6 +23,11 @@ module.exports = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
+        sacsbrainz: {
+          // DEFAULT: "hsl(var(--primary))",
+          gray: "#f8f8f8",
+          black: "#384248"
+        },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",

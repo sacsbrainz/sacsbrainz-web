@@ -42,3 +42,5 @@ yarn-error.log*
 *.tsbuildinfo
 
 ssh*
+package-lock.json
+pnpm-lock.yaml

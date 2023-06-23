@@ -284,7 +284,7 @@ function DocsLayout({
             </div> */}
 
             {/* Code */}
-            <div className="w-[500px] p-4">
+            <div className="w-full lg:w-[500px] p-4">
               <div className="flex max-h-[450px] flex-col divide-y divide-gray-600 rounded-lg bg-[rgb(28,27,27)]">
                 {selectedLanguage?.libs && (
                   <Select
@@ -345,7 +345,7 @@ function DocsLayout({
                 </div>
               </div>
             </div>
-            <div className="w-[500px] p-4">
+            <div className="w-full lg:w-[500px] p-4">
               <div className="w-full divide-y rounded-md border border-gray-200 bg-sacsbrainz-gray dark:border-white dark:bg-sacsbrainz-black">
                 <div className="font-poppins-400 flex w-full justify-between p-4">
                   <span>RESPONSE</span>

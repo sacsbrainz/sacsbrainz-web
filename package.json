@@ -31,7 +31,6 @@
     "curlconverter": "^4.8.1",
     "highlight.js": "^11.8.0",
     "httpsnippet": "^2.0.0",
-    "jsonwebtoken": "^9.0.0",
     "lucide-react": "^0.241.0",
     "next": "^13.4.2",
     "next-auth": "^4.22.1",

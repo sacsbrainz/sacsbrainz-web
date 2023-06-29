@@ -71,6 +71,7 @@ const MyApp: AppType<{ session: Session | null }> = ({
           r: document.referrer || null,
           w: window.innerWidth,
           p: { ...analytics, [url]: [n, t] },
+          a: env.NEXT_PUBLIC_APP_ID,
         }),
         keepalive: true,
       };

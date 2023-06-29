@@ -32,6 +32,7 @@ export const env = createEnv({
   client: {
     NEXT_PUBLIC_API_URL: z.string().url(),
     NEXT_PUBLIC_ANALYTICS_URL: z.string().url(),
+    NEXT_PUBLIC_APP_ID: z.string().min(1),
     // NEXT_PUBLIC_CLIENTVAR: z.string().min(1),
   },
 
@@ -46,6 +47,7 @@ export const env = createEnv({
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
     NEXT_PUBLIC_ANALYTICS_URL: process.env.NEXT_PUBLIC_ANALYTICS_URL,
+    NEXT_PUBLIC_APP_ID: process.env.NEXT_PUBLIC_APP_ID,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation.

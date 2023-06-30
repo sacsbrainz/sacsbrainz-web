@@ -29,6 +29,25 @@ function Index() {
               </Link>
             </div>
           </div>
+          <div className="">
+            <Link href="/tools/domain" className="font-bold uppercase underline">
+              #Domain
+            </Link>
+            <div className=" mt-3 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+              <Link
+                href="/tools/domain/compress"
+                className="broder-[1.5px] rounded-lg border p-2 text-center text-sm shadow-md "
+              >
+               check Subdomain
+              </Link>
+              {/* <Link
+                href="/tools/domain/resize"
+                className="broder-[1.5px] rounded-lg border p-2 text-center text-sm shadow-md "
+              >
+                Resize image
+              </Link> */}
+            </div>
+          </div>
         </div>
       </div>
     </Layout>

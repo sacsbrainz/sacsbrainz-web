@@ -10,6 +10,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { env } from "@/env.mjs";
 import { useRouter } from "next/router";
+import { OPEN_GRAPH, SITE } from "@/config";
 
 declare global {
   interface Window {
@@ -96,6 +97,21 @@ const MyApp: AppType<{ session: Session | null }> = ({
     };
   }, [router.events, onVisibilityChange, onRouteChange]);
 
+  const ogImageData = {
+    title: SITE.title,
+    description: SITE.description,
+    pagePath: router.pathname,
+  };
+  const siteUrl = "https://sacsbrainz.com";
+
+  const imageSrc = `${siteUrl}/og?${Object.entries(ogImageData)
+    .map(([key, value]) => `${key}=${value}`)
+    .join("&")}`;
+  const cleanPath = router.asPath.split("#")[0]?.split("?")[0] ?? "";
+  const canonicalUrl = `${siteUrl}` + (router.asPath === "/" ? "" : cleanPath);
+  const imageUrl = new URL(imageSrc, window.location.origin).toString();
+  const imageAlt = OPEN_GRAPH.image.alt;
+
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {/* <SessionProvider session={session}> */}
@@ -103,7 +119,28 @@ const MyApp: AppType<{ session: Session | null }> = ({
         <NextNProgress options={{ showSpinner: false }} />
         <Head>
           <title>Sacsbrainz</title>
-          <meta name="description" content="Life isn't hard" />
+          <meta
+            name="description"
+            property="og:description"
+            content={SITE.description}
+          />
+
+          {/* <!-- OpenGraph Tags --> */}
+          <meta property="og:title" content={SITE.title} />
+          <meta property="og:type" content={"website"} />
+          <meta property="og:url" content={canonicalUrl} />
+          <meta property="og:locale" content={"en"} />
+          <meta property="og:image" content={imageUrl} />
+          <meta property="og:image:alt" content={imageAlt} />
+          <meta property="og:site_name" content={SITE.title} />
+
+          {/* <!-- Twitter Tags --> */}
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content={OPEN_GRAPH.twitter} />
+          <meta name="twitter:title" content={SITE.title} />
+          <meta name="twitter:description" content={SITE.description} />
+          <meta name="twitter:image" content={imageUrl} />
+          <meta name="twitter:image:alt" content={imageAlt} />
           <link
             rel="apple-touch-icon"
             sizes="180x180"

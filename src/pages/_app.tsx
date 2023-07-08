@@ -109,7 +109,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
     .join("&")}`;
   const cleanPath = router.asPath.split("#")[0]?.split("?")[0] ?? "";
   const canonicalUrl = `${siteUrl}` + (router.asPath === "/" ? "" : cleanPath);
-  const imageUrl = new URL(imageSrc, window.location.origin).toString();
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
+  const imageUrl = new URL(imageSrc, origin).toString();
   const imageAlt = OPEN_GRAPH.image.alt;
 
   return (

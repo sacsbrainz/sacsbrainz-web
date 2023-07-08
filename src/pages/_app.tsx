@@ -97,23 +97,10 @@ const MyApp: AppType<{ session: Session | null }> = ({
     };
   }, [router.events, onVisibilityChange, onRouteChange]);
 
-  const ogImageData = {
-    title: SITE.title,
-    description: SITE.description,
-    pagePath: router.pathname,
-  };
   const siteUrl = "https://sacsbrainz.com";
-
-  const imageSrc = `${siteUrl}/og?${Object.entries(ogImageData)
-    .map(([key, value]) => `${key}=${value}`)
-    .join("&")}`;
   const cleanPath = router.asPath.split("#")[0]?.split("?")[0] ?? "";
   const canonicalUrl = `${siteUrl}` + (router.asPath === "/" ? "" : cleanPath);
-  const origin =
-    typeof window !== "undefined" && window.location.origin
-      ? window.location.origin
-      : "";
-  const imageUrl = new URL(imageSrc, origin).toString();
+
   const imageAlt = OPEN_GRAPH.image.alt;
 
   return (
@@ -134,16 +121,17 @@ const MyApp: AppType<{ session: Session | null }> = ({
           <meta property="og:type" content={"website"} />
           <meta property="og:url" content={canonicalUrl} />
           <meta property="og:locale" content={"en"} />
-          <meta property="og:image" content={imageUrl} />
+          <meta property="og:image" content={`${siteUrl}/og.png`} />
           <meta property="og:image:alt" content={imageAlt} />
           <meta property="og:site_name" content={SITE.title} />
 
           {/* <!-- Twitter Tags --> */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content={OPEN_GRAPH.twitter} />
+          <meta name="twitter:creator" content={OPEN_GRAPH.twitter} />
           <meta name="twitter:title" content={SITE.title} />
           <meta name="twitter:description" content={SITE.description} />
-          <meta name="twitter:image" content={imageUrl} />
+          <meta name="twitter:image" content={`${siteUrl}/og.png`} />
           <meta name="twitter:image:alt" content={imageAlt} />
           <link
             rel="apple-touch-icon"

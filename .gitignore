@@ -44,3 +44,14 @@ yarn-error.log*
 ssh*
 package-lock.json
 pnpm-lock.yaml
+
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+

@@ -1,6 +1,6 @@
 {
   "name": "sacsbrainz",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -28,7 +28,7 @@
     "class-variance-authority": "^0.6.0",
     "clsx": "^1.2.1",
     "curl-string": "^3.1.0",
-    "curlconverter": "^4.8.1",
+    "curlconverter": "^4.8.0",
     "highlight.js": "^11.8.0",
     "httpsnippet": "^2.0.0",
     "lucide-react": "^0.241.0",

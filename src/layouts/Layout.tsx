@@ -24,33 +24,30 @@ function Layout({ children }: { children: React.ReactNode }) {
         >
           Home
         </Link>
-        <button
-          disabled
+        <Link
           className="w-full py-4 text-center hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-20 dark:hover:bg-black lg:w-auto lg:px-5"
-          // href="/blog"
+          href="/blog"
         >
           Blog
-        </button>
-        <button
-          disabled
+        </Link>
+        <Link
           className="w-full py-4 text-center hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-20 dark:hover:bg-black lg:w-auto lg:px-5"
-          // href="/tools"
+          href="/tools"
         >
           Tools
-        </button>
+        </Link>
         <button
           className="w-full py-4 text-center hover:bg-gray-200 dark:hover:bg-black lg:w-auto lg:px-5"
           onClick={() => setPaymodal(true)}
         >
           Pay
         </button>
-        <button
-          disabled
+        <Link
           className="w-full py-4 text-center hover:bg-gray-200 disabled:cursor-not-allowed disabled:opacity-20 dark:hover:bg-black lg:w-auto lg:px-5"
-          // href="/docs/api"
+          href="/docs/api"
         >
           Api
-        </button>
+        </Link>
         <div className=" absolute right-0 top-16">
           <ThemeToggle />
         </div>
